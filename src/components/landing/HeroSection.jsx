@@ -2,18 +2,26 @@
 import React from "react";
 import { FiArrowDown } from "react-icons/fi"; // Importing arrow icon for scroll down hint
 import { motion } from "framer-motion"; // Importing framer-motion for animations
+import BackgroundImage from "../layout/BackgroundImage";
 
 const HeroSection = () => {
 	return (
-		<section
-			className="min-h-screen flex flex-col justify-center bg-cover bg-center bg-black text-white px-6 md:px-12 lg:px-24 relative overflow-hidden"
-			style={{
-				backgroundImage: "url('/assets/images/phone.png')",
-				backgroundSize: "contain",
-				backgroundRepeat: "no-repeat",
-				backgroundPosition: "right top",
-			}}
-		>
+		<section id="hero" className="relative min-h-screen flex flex-col justify-center text-white px-6 md:px-12 lg:px-24 overflow-hidden">
+			{/* Using the BackgroundImage component with framer-motion */}
+			<motion.div
+				className="absolute inset-0"
+				initial={{ opacity: 0, scale: 1.05 }} // Start slightly smaller and transparent
+				animate={{ opacity: 1, scale: 1 }} // Animate to full size and opacity
+				transition={{ duration: 1, ease: "easeOut" }} // Animation timing
+			>
+				<BackgroundImage
+					imageUrl="/assets/images/phone.png"
+					styles={{
+						backgroundSize: 'contain',
+						backgroundPosition: 'right top',
+					}}
+				/>
+			</motion.div>
 			{/* Top Content */}
 			<div className="flex flex-col justify-center items-start w-full max-w-7xl">
 				{/* Left - Headline */}
@@ -24,16 +32,16 @@ const HeroSection = () => {
 					transition={{ duration: 1, ease: "easeOut" }} // Animation timing
 				>
 					<motion.h1
-						className="text-center sm:text-left text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6"
+						className="text-center sm:text-left text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold sm:leading-tight mb-6"
 						initial={{ opacity: 0, scale: 0.95 }} // Slightly smaller and transparent
 						animate={{ opacity: 1, scale: 1 }} // Animate to full size and opacity
 						transition={{ duration: 0.8, ease: "easeOut" }}
 					>
 						Design studio
 						<br />
-						<span>for the</span>
+						<span>for</span>
 						<br />
-						<span className="text-purple">web3 world</span>
+						<span className="text-purple">Your Bussiness</span>
 					</motion.h1>
 					<motion.p
 						className="text-base sm:text-lg md:text-xl opacity-70"

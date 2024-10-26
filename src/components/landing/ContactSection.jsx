@@ -10,6 +10,7 @@ import {
 	FaPhone,
 	FaMapMarkerAlt,
 } from "react-icons/fa"; // Icons for social media
+import ShootingStars from "../layout/ShootingStars";
 
 const ContactSection = () => {
 	// Animation variants for framer-motion
@@ -34,10 +35,9 @@ const ContactSection = () => {
 	};
 
 	return (
-		<section className="relative bg-black text-white py-20 px-6 md:px-20 lg:px-32 overflow-hidden">
-			{/* Background Decorative Gradient */}
-			<div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-black opacity-20 blur-3xl z-0"></div>
+		<section id="contact" className="relative text-white py-20 px-6 md:px-20 lg:px-32 overflow-hidden">
 
+			<ShootingStars />
 			{/* Content Wrapper */}
 			<motion.div
 				className="relative max-w-7xl mx-auto"
@@ -100,9 +100,9 @@ const ContactSection = () => {
 					</div>
 
 					{/* Right Section - Contact Form */}
-					<div className="lg:w-1/2 w-full">
+					<div className="relative lg:w-1/2 w-full">
 						<motion.form
-							className="bg-black rounded-lg p-8 md:p-12 backdrop-blur-sm"
+							className="rounded-lg p-8 md:p-12 backdrop-blur-sm"
 							variants={itemVariants}
 						>
 							{/* Name Input */}

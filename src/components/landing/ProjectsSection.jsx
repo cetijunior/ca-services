@@ -1,6 +1,7 @@
 // src/pages/landing/ProjectsSection.jsx
 import React from "react";
 import { motion } from "framer-motion"; // Importing framer-motion for animations
+import ShootingStars from "../layout/ShootingStars";
 
 const projectData = [
 	{
@@ -61,7 +62,8 @@ const cardVariants = {
 
 const ProjectsSection = () => {
 	return (
-		<section className="bg-black text-white py-16 px-6 md:px-20">
+		<section id="projects" className="relative text-white py-16 px-6 md:px-20">
+			<ShootingStars />
 			<div className="max-w-7xl max-h-7xl mx-auto">
 				<motion.h2
 					initial="hidden"
@@ -100,10 +102,10 @@ const ProjectsSection = () => {
 
 							{/* Overlay for Text */}
 							<div
-								className={`relative z-10 flex flex-col justify-end h-full transition-opacity duration-300 ${
+								className={`relative z-10 flex flex-col justify-end h-full transition-opacity  ${
 									// Conditional classes for hover behavior on lg screens and always visible on sm screens
 									"lg:opacity-0 lg:hover:opacity-100 sm:opacity-100"
-								}`}
+									}`}
 							>
 								<div className="mt-auto bg-black bg-opacity-60 p-4 rounded-lg backdrop-blur-sm">
 									{/* Title */}

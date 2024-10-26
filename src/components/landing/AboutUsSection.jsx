@@ -2,6 +2,7 @@
 import React from "react";
 import { motion } from "framer-motion"; // Importing framer-motion for animations
 import { FaLightbulb, FaUsers, FaHandshake } from "react-icons/fa"; // Importing icons for visual enhancement
+import ShootingStars from "../layout/ShootingStars";
 
 const AboutSection = () => {
 	// Animation variants for framer-motion
@@ -35,10 +36,8 @@ const AboutSection = () => {
 	};
 
 	return (
-		<section className="bg-black text-white py-20 px-6 md:px-24 relative overflow-hidden">
-			{/* Background Decorative Gradient */}
-			<div className="absolute inset-0 bg-gradient-to-br from-purple-500 to-black opacity-20 blur-3xl z-0"></div>
-
+		<section id="about" className="relative z-10 text-white py-20 px-6 md:px-24 overflow-hidden">
+			<ShootingStars />
 			{/* Content Wrapper */}
 			<motion.div
 				className="relative max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center"
@@ -76,7 +75,7 @@ const AboutSection = () => {
 				</div>
 
 				{/* Right Side - Image Content */}
-				<div className="relative">
+				<div className="relative z-20"> {/* Ensure it stays above the ShootingStars */}
 					<motion.div
 						className="w-full h-full rounded-lg shadow-lg overflow-hidden bg-black p-2 relative"
 						variants={imageVariant}
@@ -91,11 +90,11 @@ const AboutSection = () => {
 
 					{/* Decorative Circles */}
 					<motion.div
-						className="absolute -top-12 -left-16 w-40 h-40 rounded-full bg-purple-500 opacity-30 blur-2xl"
+						className="absolute -top-12 -left-16 w-40 h-40 rounded-full bg-purple-500 opacity-30 blur-2xl z-10"
 						variants={imageVariant}
 					></motion.div>
 					<motion.div
-						className="absolute -bottom-16 -right-12 w-32 h-32 rounded-full bg-teal-400 opacity-30 blur-2xl"
+						className="absolute -bottom-16 -right-12 w-32 h-32 rounded-full bg-teal-400 opacity-30 blur-2xl z-10"
 						variants={imageVariant}
 					></motion.div>
 				</div>
@@ -103,7 +102,7 @@ const AboutSection = () => {
 
 			{/* Bottom Section - Core Values with Icons */}
 			<motion.div
-				className="relative max-w-5xl mx-auto mt-20 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"
+				className="relative max-w-5xl mx-auto mt-20 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 z-20"
 				variants={containerVariant}
 				initial="hidden"
 				whileInView="visible"
